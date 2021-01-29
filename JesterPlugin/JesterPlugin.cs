@@ -149,7 +149,11 @@ namespace JesterPlugin
                     PlayerControl.LocalPlayer.Send<SetJesterWin>(new SetJesterWin.Data("lolxd"), true);
 
                     HandleWinRpc();
+#if ITCH
                     ShipStatus.Method_34(GameOverReason.HumansDisconnect, false);
+#elif STEAM
+                    ShipStatus.RpcEndGame(GameOverReason.HumansDisconnect, false);
+#endif
                 }
             }
 
