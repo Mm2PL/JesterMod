@@ -8,15 +8,16 @@
         <Description>A Mod that ands a new Jester role to Among Us.</Description>
         <Authors>Mm2PL</Authors>
         <RootNamespace>JesterPlugin</RootNamespace>
+        <PathMap>$(MSBuildProjectDirectory)\=Z:\</PathMap>
     </PropertyGroup>
 
     <ItemGroup>
-        <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
+        <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll"/>
 
-        <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.2.3" />
+        <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.2.3"/>
     </ItemGroup>
 
     <Target Name="Copy" AfterTargets="Reobfuscate">
-        <Copy SourceFiles="$(OutputPath)reobfuscated/$(AssemblyName)-$(GameVersion).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" Condition="'$(Configuration)' == 'Debug'" />
+        <Copy SourceFiles="$(OutputPath)reobfuscated/$(AssemblyName)-$(GameVersion).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" Condition="'$(Configuration)' == 'Debug'"/>
     </Target>
 </Project>
