@@ -5,7 +5,7 @@
         <GameVersion>2020.11.17i</GameVersion>
         <Mappings>NuclearPowered/Mappings:0.1.0-alpha.2</Mappings>
 
-        <Description>Example testing mod to test out what's possible lol</Description>
+        <Description>A Mod that ands a new Jester role to Among Us.</Description>
         <Authors>Mm2PL</Authors>
         <RootNamespace>JesterPlugin</RootNamespace>
     </PropertyGroup>
