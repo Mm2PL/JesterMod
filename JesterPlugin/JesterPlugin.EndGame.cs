@@ -24,9 +24,9 @@ namespace JesterPlugin
         [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.Exiled))]
         public static class PlayerControlWinPatch
         {
-            public static void Prefix()
+            public static void Prefix(PlayerControl __instance)
             {
-                if (AmongUsClient.Instance.AmHost)
+                if (AmongUsClient.Instance.AmHost && __instance.PlayerId == SetJesterPatch.Jester.PlayerId)
                 {
                     ShipStatus.Instance.enabled = false;
                     PlayerControl.LocalPlayer.Send<SetJesterWin>(new SetJesterWin.Data("lolxd"), true);
